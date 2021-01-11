@@ -153,3 +153,22 @@ body {
 .social-links>*:hover {
     color: var(--heading-secondary-color);
 }
+
+
+/** about **/
+
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.about .heading {
+    margin-top: 3rem;
+    color: var(--heading-secondary-color);
+}
+.about .content {
+    max-width: 600px;
+    text-align: center;
+    margin: 3rem 0;
+}

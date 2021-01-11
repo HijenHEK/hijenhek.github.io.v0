@@ -1,6 +1,14 @@
-// var home = document.querySelector('.section.home') ;
-ScrollReveal().reveal('.brand', { delay: 400 , interval: 150});
-ScrollReveal().reveal('.nav-item', { delay: 500 , interval: 150});
 
-ScrollReveal().reveal('.intro', { delay: 400 , interval: 16, reset: true  });
-ScrollReveal().reveal('.image', { delay: 600 , interval: 16, reset: true  });
+
+ScrollReveal().reveal('.intro', { delay: 300 , interval: 16, reset: true  });
+ScrollReveal().reveal('.image', { delay: 450 , interval: 16, reset: true  });
+
+
+ScrollReveal().reveal('.about .heading', { delay: 300 , interval: 16, reset: true  });
+ScrollReveal().reveal('.about .content', { delay: 450 , interval: 16, reset: true  });
+
+ScrollReveal().reveal('.about .action', { delay: 650 , interval: 16, reset: true  });
+
+var age = document.querySelector('#age') ;
+var date = new Date() ;
+age.innerHTML ="" + (date.getFullYear() - 1996) ;
