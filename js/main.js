@@ -62,4 +62,35 @@ ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20
     });
     
     
+    
+    document.addEventListener('scroll' , function(){
+        
+            document.querySelectorAll('.nav-item').forEach(function(i){
+                let top = document.scrollingElement.scrollTop;
+            var cur = []
+            document.querySelectorAll('.section').forEach(function(i){
+                
+                if(i.offsetTop <= top + 50){
+                    cur.push(i)
+                }
+            });
+        cur = cur[cur.length-1];
+            var active = document.querySelector('.nav-active');
+            let item = i.getAttribute("href").substring(1);
+            cur = cur.getAttribute('id');
+                if(i != active && item == cur) {
+                    
+                    i.classList += " nav-active";
+                    active.classList = "nav-item";
+                    if(nav.classList.contains('nav-show')) {
+                        resetNav();
+        
+                    }
+                }
+        });
+        
+    })
+    
+
+
 }
