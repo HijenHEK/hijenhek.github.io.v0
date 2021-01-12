@@ -67,20 +67,22 @@ body {
     background-color: white;
     z-index: 100;
     width: 100%;
+    box-shadow: 0 1px 3px 1px rgba(141, 153, 174, 0.3);
     
 }
 .brand {
-    padding: 1rem;
+    /* padding: 1rem; */
     color: var(--heading-color);
     font-weight: 700;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
+    vertical-align: middle;
 
 }
 .brand::before {
     content: '.';
     color: var(--heading-color);
     font-weight: 700;
-    font-size: 1.8rem;
+    font-size: 3rem;
 
 }
 .nav {
@@ -284,14 +286,16 @@ body {
 }
 
 .form {
-    min-width: 300px;
-    max-width: 500px;
+    min-width: 250px;
+    max-width: 600px;
+    width: 400px;
     
 }
 .form .group {
     width: 100%;
     margin: 1rem 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 .form .group .control {
@@ -311,7 +315,13 @@ body {
 .form .btn-action {
     margin-top: 2rem;
 }
+.kw-field-error-message {
+    margin: 0.5rem 0 0.2rem 0;
+}
+.kw-border-error {
+    border: 1px solid var(--heading-secondary-color) !important;
 
+}
 .card.more {
     display: flex ;
     flex-direction: row;

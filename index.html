@@ -5,20 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/main.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script> -->
     <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- <script type="text/javascript">
-        (function() {
-            emailjs.init('user_4LBlWTZucC4ejcWgv1UPF');
-        })();
-    </script> -->
     <title>Document</title>
 </head>
 <body >
     <header class="header container">
-        <div class="brand">
-            Porfolio
-        </div>
+        <a href="#home" class="brand">
+            HEK
+        </a>
         <nav class="nav">
             <a href="#home" class="nav-item nav-active">Home</a>
             <a href="#about" class="nav-item">About</a>
@@ -37,7 +31,7 @@
                 Welcome to my portfolio !
             </div>
             <div class="action">
-                <a href="#Contact" class="btn btn-action"> Say Hi ! </a>
+                <a href="#contact" class="btn btn-action"> Say Hi ! </a>
             </div>
             <div class="social-links">
                 <a href="https://www.twitter.com/HijenHEK" target="_blank"><i class='bx bxl-twitter'></i></a>
@@ -62,7 +56,7 @@
 
             </p>
             <div class="action">
-                <a href="#Contact" class="btn btn-action"> Say Hi ! </a>
+                <a href="#contact" class="btn btn-action"> Say Hi ! </a>
             </div>
     </section>
     <section id="skills" class="section skills">
@@ -198,27 +192,26 @@
     </section>
     <section id="contact" class="section contact">
         <h1>Say Hi !</h1>
-        <form class="form kwes-form" mode="test" name="contact-form" action="https://kwes.io/api/foreign/forms/rYvlELNloygt2kJRgoD0">
+        <form class="form kwes-form" name="contact-form" 
+        action="https://kwes.io/api/foreign/forms/6gfd1n68nMNOPqSAZArO">
             <div class="group">
                 <input type="hidden" name="contact_number">
             </div>
             <div class="group">
                 <label for="name"></label>
-                <input type="text" id="name" name="name" placeholder="enter your name" class="control">
+                <input type="text" id="name" name="name" rules="string|min:3|required" placeholder="enter your name" class="control">
             </div>
             <div class="group">
                 <label for="name"></label>
-                <input type="email" id="email" name="email" placeholder="enter your email" class="control">
+                <input type="email" id="email" name="email" rules="email|required" placeholder="enter your email" class="control">
             </div>
             <div class="group">
                 <label for="message"></label>
-                <textarea type="text" id="message" name="message" placeholder="whats on your mind ?" class="control" ></textarea>
+                <textarea type="text" id="message" name="message" rules="min:2|required" placeholder="whats on your mind ?" class="control" ></textarea>
 
             </div>
-            <div class="group">
                 
                 <button class="btn-action" type="submit"> Send </button>
-            </div>
         </form>
     </section>
 

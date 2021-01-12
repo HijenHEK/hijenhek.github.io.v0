@@ -33,17 +33,4 @@ ScrollReveal().reveal('.contact , .contact .group ', { delay: 200 , interval: 50
         }
     });
 
-    // document.getElementById('contact-form').addEventListener('submit', function(event) {
-    //     event.preventDefault();
-    //     // generate a five digit number for the contact_number variable
-    //     this.contact_number.value = Math.random() * 100000 | 0;
-    //     // these IDs from the previous steps
-        
-    //     emailjs.sendForm('service_rbgzsa4',  'template_cor3guk' , this , 'user_4LBlWTZucC4ejcWgv1UPF')
-    //         .then(function() {
-    //             console.log('SUCCESS!');
-    //         }, function(error) {
-    //             console.log('FAILED...', error);
-    //         });
-    // });
 }
