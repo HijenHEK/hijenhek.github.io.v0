@@ -106,6 +106,7 @@ body {
     padding-top: 8rem;
     min-height: 100%;
     width: 100%;
+    
 
 }
 
@@ -280,6 +281,7 @@ body {
     display: flex;
     flex-direction: column ;
     align-items: center;
+    justify-content: center;
 }
 
 .contact h1 {
@@ -353,6 +355,7 @@ display: none;
     .section.home {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     .section.home .image {
         display: flex;
@@ -366,7 +369,18 @@ display: none;
         align-items: center;
         order: 2;
         text-align: center;
+        font-size: 1.8rem;
     }
+    .section.home .image img {
+        /* flex-basis: calc(100vh - 5rem);
+        flex-shrink: 1 ;
+        flex-grow: 1 ; */
+        min-width: 100px;
+        height: calc(80% - 5rem);
+        width: calc(80% - 5rem);
+    
+    }
+    
     .form {
         min-width: unset;
         width: 100%;
@@ -414,13 +428,24 @@ display: none;
 
 @media(max-width:480px) {
     :root {
-        font-size: 90%;
+        font-size: 80%;
     }
     .section {
-        padding:5rem 1rem !important;
+        padding:7rem 1rem !important;
     }
     .card {
         width: 100%;
         min-width: 250px !important;
     }
+    
+    .intro {
+        min-width: 300px;
+        font-size: 1.5rem;
+        padding: 1rem;
+        max-width: 600x;
+    }
+    .contact h1{
+        margin-bottom: 1rem;
+    }
+    
 }
