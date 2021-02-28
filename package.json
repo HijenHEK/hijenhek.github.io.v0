@@ -1,0 +1,39 @@
+{
+  "name": "portfolio-example",
+  "version": "1.0.0",
+  "description": "## Hi i am Hijen El Khalifi and this is my personal portfolio  ### i used    - [kwes.io](https://www.kwes.io) for the contact form     - [scrollrevealjs.org](https://scrollrevealjs.org/) for the revealing animation   - [boxicons.com](https://boxicons.com/) for the icons",
+  "private": true,
+  "scripts": {
+    "predev": "rimraf ./dist",
+    "dev": "webpack --progress",
+    "watch": "webpack watch",
+    "build": "cross-env MODE=production npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HijenHEK/hijenhek.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HijenHEK/hijenhek.github.io/issues"
+  },
+  "homepage": "https://github.com/HijenHEK/hijenhek.github.io#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.8",
+    "@babel/preset-env": "^7.13.8",
+    "babel-loader": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "css-loader": "^5.1.0",
+    "rimraf": "^2.7.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  }
+}

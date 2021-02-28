@@ -1,5 +1,5 @@
 
-
+import css from '../css/style.css'
 ScrollReveal().reveal('.intro', { delay: 150 , interval: 20, reset: true  });
 ScrollReveal().reveal('.image', { delay: 100 , interval: 20, reset: true  });
 
@@ -14,9 +14,11 @@ ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20
 
 
 
-// window.addEventListener('resize' , function(){
-//     location.reload();
-// })
+window.addEventListener('resize' , function(){
+    ScrollReveal().reveal('.skills .card ', { delay: 150 , interval: 20, reset: true  });
+    ScrollReveal().reveal('.work .card ', { delay: 150 , interval: 20, reset: true  });
+    ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20, reset: true  });
+})
 
 
 
