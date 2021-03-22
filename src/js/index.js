@@ -1,24 +1,27 @@
 
 import css from '../css/style.css'
-ScrollReveal().reveal('.intro', { delay: 150 , interval: 20, reset: true  });
-ScrollReveal().reveal('.image', { delay: 100 , interval: 20, reset: true  });
+
+import ScrollReveal from 'scrollreveal';
+
+ScrollReveal().reveal('.intro', { delay: 100 , reset: true  });
+ScrollReveal().reveal('.image', { delay: 150 , reset: true  });
 
 
-ScrollReveal().reveal('.about ', { delay: 150 , interval: 20, reset: true  });
+ScrollReveal().reveal('.about ', { delay: 100 , reset: true  });
 
 
-ScrollReveal().reveal('.skills .card ', { delay: 150 , interval: 20, reset: true  });
-ScrollReveal().reveal('.work .card ', { delay: 150 , interval: 20, reset: true  });
+ScrollReveal().reveal('.skills .card ', { delay: 100 , reset: true  });
+ScrollReveal().reveal('.work .card ', { delay: 100 , reset: true  });
 
-ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20, reset: true  });
+ScrollReveal().reveal('.contact , .contact .group ', { delay: 100 , reset: true  });
 
 
 
-window.addEventListener('resize' , function(){
-    ScrollReveal().reveal('.skills .card ', { delay: 150 , interval: 20, reset: true  });
-    ScrollReveal().reveal('.work .card ', { delay: 150 , interval: 20, reset: true  });
-    ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20, reset: true  });
-})
+// window.addEventListener('resize' , function(){
+//     ScrollReveal().reveal('.skills .card ', { delay: 150 , interval: 20, reset: true  });
+//     ScrollReveal().reveal('.work .card ', { delay: 150 , interval: 20, reset: true  });
+//     ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20, reset: true  });
+// })
 
 
 
@@ -33,10 +36,10 @@ window.addEventListener('resize' , function(){
     
 
     var nav = document.querySelector('.nav');
+
     var resetNav = function(){
         setTimeout(function(){
             nav.classList = "nav";
-
         },100)
     }
     nav.addEventListener('click' , function (event) { 
@@ -46,19 +49,17 @@ window.addEventListener('resize' , function(){
             active.classList = "nav-item";
             if(nav.classList.contains('nav-show')) {
                 resetNav();
-
             }
         }
     });
+
     navToggler.addEventListener('click' , function (event) { 
         if(nav.classList.contains('nav-show')) {
             resetNav();
-            
         }else {
             nav.classList +=" nav-show";
             setTimeout(function(){
                 document.addEventListener('click' , resetNav )} , 50)
-
         }
         document.removeEventListener('click' , resetNav)
     });
@@ -66,13 +67,12 @@ window.addEventListener('resize' , function(){
     
     
     document.addEventListener('scroll' , function(){
-        
             document.querySelectorAll('.nav-item').forEach(function(i){
                 let top = document.scrollingElement.scrollTop;
             var cur = []
             document.querySelectorAll('.section').forEach(function(i){
-                
-                if(i.offsetTop <= top + 50){
+            
+                if(i.offsetTop <= top + document.querySelector('.header').clientHeight *2 ){
                     cur.push(i)
                 }
             });
@@ -82,8 +82,8 @@ window.addEventListener('resize' , function(){
             cur = cur.getAttribute('id');
                 if(i != active && item == cur) {
                     
-                    i.classList += " nav-active";
-                    active.classList = "nav-item";
+                    i.classList.add('nav-active');
+                    active.classList.remove('nav-active');
                     if(nav.classList.contains('nav-show')) {
                         resetNav();
         
