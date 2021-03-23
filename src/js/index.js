@@ -3,40 +3,37 @@ import css from '../css/style.css'
 
 import ScrollReveal from 'scrollreveal';
 
-ScrollReveal().reveal('.intro', { delay: 100 , reset: true  });
-ScrollReveal().reveal('.image', { delay: 150 , reset: true  });
-
-
-ScrollReveal().reveal('.about ', { delay: 100 , reset: true  });
-
-
-ScrollReveal().reveal('.skills .card ', { delay: 100 , reset: true  });
-ScrollReveal().reveal('.work .card ', { delay: 100 , reset: true  });
-
-ScrollReveal().reveal('.contact , .contact .group ', { delay: 100 , reset: true  });
 
 
 
-// window.addEventListener('resize' , function(){
-//     ScrollReveal().reveal('.skills .card ', { delay: 150 , interval: 20, reset: true  });
-//     ScrollReveal().reveal('.work .card ', { delay: 150 , interval: 20, reset: true  });
-//     ScrollReveal().reveal('.contact , .contact .group ', { delay: 150 , interval: 20, reset: true  });
-// })
+ScrollReveal().reveal('.intro', {delay : 150 , interval : 100 });
+ScrollReveal().reveal('.image', {delay : 200 , interval : 100 });
+ScrollReveal().reveal('.about ', {delay : 150 , interval : 100 });
+ScrollReveal().reveal('.skills .card ', {delay : 150 , interval : 100 });
+ScrollReveal().reveal('.work .card ', {delay : 150 , interval : 100 });
+ScrollReveal().reveal('.contact , .contact .group ', {delay : 150 , interval : 100 });
+
+window.addEventListener('resize' , ()=>{
+    // ScrollReveal().sync();
+})
+
+function debounce(method, delay) {
+    clearTimeout(method._tId);
+    method._tId= setTimeout(function(){
+        method();
+    }, delay);
+}
 
 
 
-
-
- window.onload = function() {
+window.onload = function() {
+    // ScrollReveal().sync()
 
     var age = document.querySelector('#age') ;
     var navToggler = document.querySelector('#nav-toggler') ;
     var date = new Date() ;
     age.innerHTML ="" + (date.getFullYear() - 1996) ;
-    
-
-    var nav = document.querySelector('.nav');
-
+    var nav = document.querySelector('nav.nav');
     var resetNav = function(){
         setTimeout(function(){
             nav.classList = "nav";
@@ -67,31 +64,40 @@ ScrollReveal().reveal('.contact , .contact .group ', { delay: 100 , reset: true 
     
     
     document.addEventListener('scroll' , function(){
+        debounce(()=>{
+
             document.querySelectorAll('.nav-item').forEach(function(i){
                 let top = document.scrollingElement.scrollTop;
-            var cur = []
-            document.querySelectorAll('.section').forEach(function(i){
-            
-                if(i.offsetTop <= top + document.querySelector('.header').clientHeight *2 ){
-                    cur.push(i)
-                }
-            });
-        cur = cur[cur.length-1];
-            var active = document.querySelector('.nav-active');
-            let item = i.getAttribute("href").substring(1);
-            cur = cur.getAttribute('id');
+                var cur = []
+                document.querySelectorAll('.section').forEach(function(i){
+                    
+                    if(i.offsetTop <= top + document.querySelector('.header').clientHeight *2 ){
+                        cur.push(i)
+                    }
+                });
+                cur = cur[cur.length-1];
+                var active = document.querySelector('.nav-active');
+                let item = i.getAttribute("href").substring(1);
+                cur = cur.getAttribute('id');
                 if(i != active && item == cur) {
                     
                     i.classList.add('nav-active');
                     active.classList.remove('nav-active');
                     if(nav.classList.contains('nav-show')) {
                         resetNav();
-        
+                        
                     }
+                    if (window.history.pushState) {
+                        //prevents browser from storing history with each change:
+                        window.history.pushState({}, null , '#'+cur);
+                     }
                 }
-        });
-        
+            });
+            
+        }, 500);
     })
+        
+        
     
 
 
