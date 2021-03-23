@@ -3,15 +3,16 @@ import css from '../css/style.css'
 
 import ScrollReveal from 'scrollreveal';
 
+import 'boxicons';
 
 
 
-ScrollReveal().reveal('.intro', {delay : 150 , interval : 100 });
-ScrollReveal().reveal('.image', {delay : 200 , interval : 100 });
-ScrollReveal().reveal('.about ', {delay : 150 , interval : 100 });
-ScrollReveal().reveal('.skills .card ', {delay : 150 , interval : 100 });
-ScrollReveal().reveal('.work .card ', {delay : 150 , interval : 100 });
-ScrollReveal().reveal('.contact , .contact .group ', {delay : 150 , interval : 100 });
+ScrollReveal().reveal('.intro', {delay : 500 , interval : 100 });
+ScrollReveal().reveal('.image', {delay : 700 , interval : 100 });
+ScrollReveal().reveal('.about ', {delay : 500 , interval : 100 });
+ScrollReveal().reveal('.skills .card ', {delay : 500 , interval : 100 });
+ScrollReveal().reveal('.work .card ', {delay : 500 , interval : 100 });
+ScrollReveal().reveal('.contact , .contact .group ', {delay : 500 , interval : 100 });
 
 window.addEventListener('resize' , ()=>{
     // ScrollReveal().sync();
