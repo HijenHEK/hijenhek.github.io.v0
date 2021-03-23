@@ -7,16 +7,14 @@ import 'boxicons';
 
 
 
-ScrollReveal().reveal('.intro', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.image', {delay : 700 , interval : 100 });
-ScrollReveal().reveal('.about ', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.skills .card ', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.work .card ', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.contact , .contact .group ', {delay : 500 , interval : 100 });
+ScrollReveal().reveal('.intro', {delay : 300 , interval : 200 });
+ScrollReveal().reveal('.image', {delay : 500 , interval : 200 });
+ScrollReveal().reveal('.about ', {delay : 300 , interval : 200 });
+ScrollReveal().reveal('.skills .card ', {delay : 300 , interval : 200 });
+ScrollReveal().reveal('.work .card ', {delay : 300 , interval : 200 });
+ScrollReveal().reveal('.contact , .contact .group ', {delay : 300 , interval : 200 });
 
-window.addEventListener('resize' , ()=>{
-    // ScrollReveal().sync();
-})
+
 
 function debounce(method, delay) {
     clearTimeout(method._tId);
@@ -28,7 +26,12 @@ function debounce(method, delay) {
 
 
 window.onload = function() {
-    // ScrollReveal().sync()
+    var loader = document.querySelector('#loader');
+    var loading = document.querySelector('.loading');
+    loader.classList.remove('loader') ;
+    loader.classList.add('none') ;
+    loading.classList.remove('loading');
+
 
     var age = document.querySelector('#age') ;
     var navToggler = document.querySelector('#nav-toggler') ;

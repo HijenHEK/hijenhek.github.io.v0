@@ -9,10 +9,39 @@
     <!-- <link rel="stylesheet" href="./css/main.css"> -->
     <!-- <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'> -->
 
-    
+    <style>
+        .loading *:not(:first-child) {
+            opacity: 0;
+        }
+        .loader {
+            position: absolute;
+            z-index: 999;
+            top: -10%;
+            height: 110vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .loading {
+            max-height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+       
+
+    </style>
     <title>Hijen EL Khalifi</title>
 </head>
-<body >
+<body class="loading">
+
+    <div class="loader" id="loader">
+        <img src="./img/audio.svg" alt="loader svg">
+    </div>
+
+
     <header class="header container">
         <a href="#home" class="brand">
             HEK
