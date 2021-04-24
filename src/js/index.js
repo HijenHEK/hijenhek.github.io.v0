@@ -1,22 +1,10 @@
 
 import css from '../css/style.css'
 
-import ScrollReveal from 'scrollreveal';
 
 import 'boxicons';
 
 
-
-ScrollReveal().reveal('.intro', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.image', {delay : 700 , interval : 100 });
-ScrollReveal().reveal('.about ', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.skills .card ', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.work .card ', {delay : 500 , interval : 100 });
-ScrollReveal().reveal('.contact , .contact .group ', {delay : 500 , interval : 100 });
-
-window.addEventListener('resize' , ()=>{
-    // ScrollReveal().sync();
-})
 
 function debounce(method, delay) {
     clearTimeout(method._tId);
@@ -89,8 +77,8 @@ window.onload = function() {
                         
                     }
                     if (window.history.pushState) {
-                        //prevents browser from storing history with each change:
-                        window.history.pushState({}, null , '#'+cur);
+
+                        window.history.pushState({}, null, '#' + cur);
                      }
                 }
             });
